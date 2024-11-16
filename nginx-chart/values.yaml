@@ -1,0 +1,5 @@
+image:
+  name: nginx
+  tag: latest
+replicas: 
+cp: 80
