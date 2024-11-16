@@ -137,7 +137,7 @@ nginx-v3        app2            1               2024-11-16 06:39:39.18888957 +00
 user@microk8s:~/kuber-homeworks-2.5/nginx-chart$ 
 ```
 
-`````
+------
 
 ### PS 
 Во время выполнения 2-й части задания, при использовании деплоймента из 1 части задания, я столкнулся с ошибкой когда пытался запустить вторую копию приложения в том же namespace:
@@ -146,7 +146,7 @@ ser@microk8s:~/kuber-homeworks-2.5/nginx-chart$ helm install nginx-v2 . --namesp
 Error: INSTALLATION FAILED: Unable to continue with install: Deployment "nginx-deployment" in namespace "app1" exists and cannot be imported into the current release: invalid ownership metadata; annotation validation error: key "meta.helm.sh/release-name" must equal "nginx-v2": current value is "nginx-v1"
 user@microk8s:~/kuber-homeworks-2.5/nginx-chart$ helm delete nginx-v1 -n app1
 ```
-Решил её модифицировав деплоймент следующим обрпзом:
+Решил её модифицировав деплоймент следующим образом:
 ```yml
 apiVersion: apps/v1
 kind: Deployment
